@@ -24,9 +24,9 @@ Contact:
 
 Note:
 
-	If you want multiple of these folders to be used at same time.  For example you might want
-	unix32 and unix64 folders for building each type.  Then simply update prefix= with the
-	new path in the .pc files:
+	If you want multiple of these folders to be used at same time.  For example you might
+	want unix32 and unix64 folders for building each type.  Then simply update prefix=
+	with the new path in the .pc files:
 
 		sed -i "s/prefix=.*/prefix=$new_path/g" lib/pkgconfig/* src/pkgconfig/*
 
