@@ -44,7 +44,7 @@ Scripts:
 
 Running Forsaken:
 
-	The convention is to place this folder in forsaken/src and from there run:
+	The convention is to place this folder in forsaken/src and run:
 
 		./unix/make.sh && ./unix/run.sh
 
