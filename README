@@ -37,8 +37,21 @@ Scripts:
 	./src/SDL-2.0.build.latest  = clone latest SDL from HG repo and build.
 	./src/clean.sh              = run `make clean` everywhere.
 	./reset.sh                  = reset this folder back to clean state.
+	./pkgconfig.sh              = run pkgconfig pointing to this folder for testing.
 	./make.sh                   = run make on Forsaken with PKG_CONFIG_PATH set properly.
 	./run.sh                    = run Forsaken with {LD,DYLD}_LIBRARY_PATH set properly.
+
+
+Running Forsaken:
+
+	Note that the general intention for how this folder should be is used
+	is to drop it into the forsaken/src folder and from there run:
+
+		./unix/make.sh && ./unix/run.sh
+
+	Generally you end up writing a custom wrapper script to your liking.
+
+	See the Forsaken Makefile for information on various build options you can pass.
 
 
 Building 32bit on ubuntu 64bit:
