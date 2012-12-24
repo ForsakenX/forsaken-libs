@@ -34,7 +34,7 @@ Note:
 Scripts:
 
 	./src/build.sh              = build everything.
-	./src/SDL-2.0.build.latest  = clone latest SDL from HG repo and build
+	./src/SDL-2.0.build.latest  = clone latest SDL from HG repo and build.
 	./src/clean.sh              = run `make clean` everywhere.
 	./reset.sh                  = reset this folder back to clean state.
 	./make.sh                   = run make on Forsaken with PKG_CONFIG_PATH set properly.
