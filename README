@@ -52,6 +52,8 @@ Running Forsaken:
 
 	See the Forsaken Makefile for information on various build options you can pass.
 
+	Note that run.sh uses gdb.
+
 
 Building 32bit on ubuntu 64bit:
 
