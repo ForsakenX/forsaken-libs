@@ -74,11 +74,13 @@ MAC OSX (beta):
 
 		./unix/make.sh
 
+		lib="$PWD/unix/lib"
+
 		dyldinfo -dylibs ./projectx |
 		grep dylib |
 		while read -r path; do
-			[[ -f "./unix/lib/${path/*\/}" ]] &&
-			install_name_tool -change "$path" "$PWD/unix/lib/${path/*\/}" ./projectx
+			[[ -f "$lib/${path/*\/}" ]] &&
+			install_name_tool -change "$path" "$lib/${path/*\/}" ./projectx
 		done
 
 		./unix/run.sh
