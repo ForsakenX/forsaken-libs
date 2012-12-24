@@ -6,15 +6,15 @@ Description:
 
 	You can of course choose to use your distributions package manager instead as long as
 	it properly manages pkgconfig for each of the packages.  Although over time we've seen
-	each distribution build things in their own way, missing static libraries, broken/sloppy
+	each distribution build things in their own way, missing static libraries, sloppy
 	pkgconfigs, missing options etc..
 
 	These scripts are also required to build for mac osx and another folder similar to this
 	one has precompiled libraires for win32 allowing cross/native compilation using mingw
 	(will be merged with this project soon).
 
-	Hence these helper scripts give us a baseline that allows us to easily compile all required 
-	depencies from scratch for any target system.
+	Hence these helper scripts give us a baseline that allows us to easily compile all
+	required depencies from scratch for any target system.
 
 
 Contact:
@@ -25,8 +25,10 @@ Contact:
 Note:
 
 	If you want multiple of these folders to be used at same time.  For example you might want
-	unix32 and unix64 folders for building each type.  Then simply update unix/lib/pkgconfig/*
-	and unix/src/pkgconfig/* prefix= to desired path.
+	unix32 and unix64 folders for building each type.  Then simply update prefix= with the
+	new path in the .pc files:
+
+		sed -i "s/prefix=.*/prefix=$new_path/g" lib/pkgconfig/* src/pkgconfig/*
 
 
 Scripts:
@@ -45,11 +47,12 @@ Building 32bit on ubuntu 64bit:
 	./ubuntu64-ia32-pkgs.sh = install required packages to compile 32bit on 64bit ubuntu.
 	./ubuntu64-ia32-make.sh = compile 32bit forsaken on 64bit ubuntu
 
-	To do a pending issue remove unix/lib/libSDL* and -lSDLmain from unix/lib/pkgconfig/sdl.pc
+	Do to a pending issue you must remove remove unix/lib/libSDL* and -lSDLmain from
+	unix/lib/pkgconfig/sdl.pc
 
-	Ubuntu doesn't really support building 32bit and 64bit same time since attempting to install
-	32bit packages will replace the 64bit packages and vice versa.  The scripts above get around
-	this by doing a few non standard symlinks.
+	Ubuntu doesn't really support building 32bit and 64bit same time since attempting to
+	install 32bit packages will replace the 64bit packages and vice versa.  The scripts
+	above get around this by doing a few non standard symlinks.
 
 
 MAC OSX (beta):
@@ -65,9 +68,9 @@ MAC OSX (beta):
 
 		dyldinfo -dylibs ./projectx
 
-	This can usually be achieved by the command below.  Although note that the binaries will
-	break if you move your unix folder to another path in the file system.  In which case
-	you may want to copy/set prebuilt versions to a stable location (such as /lib).
+	This can usually be achieved by the command below.  Although note that the binaries
+	will break if you move your unix folder to another path in the file system.  In which
+	case you may want to copy/set prebuilt versions to a stable location (such as /lib).
 
 		./unix/make.sh
 
