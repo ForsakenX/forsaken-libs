@@ -44,12 +44,11 @@ Scripts:
 
 Running Forsaken:
 
-	Note that the general intention for how this folder should be is used
-	is to drop it into the forsaken/src folder and from there run:
+	The convention is to place this folder in forsaken/src and from there run:
 
 		./unix/make.sh && ./unix/run.sh
 
-	Generally you end up writing a custom wrapper script to your liking.
+	Generally you end up writing a custom wrapper script around this.
 
 	See the Forsaken Makefile for information on various build options you can pass.
 
