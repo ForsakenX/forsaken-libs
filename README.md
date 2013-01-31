@@ -105,7 +105,7 @@ The scripts above gets around this by doing a few non standard symlinks.
 
 Normally on linux one would just set LD_LIBRARY_PATH.
 
-Although on osx attemptin to use DYLD_LIBRARY_PATH will cause the following error:
+Although on osx attempting to use DYLD_LIBRARY_PATH will cause the following error:
 
 ```
 Symbol not found: __cg_png_create_info_struct
