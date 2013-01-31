@@ -61,7 +61,7 @@ Building 32bit on ubuntu 64bit:
 	./ubuntu64-ia32-pkgs.sh = install required packages to compile 32bit on 64bit ubuntu.
 	./ubuntu64-ia32-make.sh = compile 32bit forsaken on 64bit ubuntu
 
-	Do to a pending issue you must remove remove unix/lib/libSDL* and -lSDLmain from
+	Do to a pending issue you must remove unix/lib/libSDL* and -lSDLmain from
 	unix/lib/pkgconfig/sdl.pc
 
 	Ubuntu doesn't really support building 32bit and 64bit same time since attempting to
