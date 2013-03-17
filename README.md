@@ -101,6 +101,12 @@ The scripts above gets around this by doing a few non standard symlinks.
 
 ## Mac OSX Linking
 
+### Home Brew
+
+Note that many build scripts expect gnu like utilities.
+
+Particularly you'll need to alias find=gfind and sed=gsed.
+
 ### What happened to LD_LIBRARY_PATH ?
 
 Normally on linux one would just set LD_LIBRARY_PATH.
