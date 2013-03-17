@@ -4,7 +4,7 @@ V= 2.0
 R= 2.0.2
 
 # relative path from forsaken src folder
-prefix= ./unix
+prefix= ./libs
 
 # grep '^INSTALL_.*=' ../Makefile | sed 's/INSTALL_TOP/prefix/'
 INSTALL_BIN= ${prefix}/bin
