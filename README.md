@@ -68,10 +68,10 @@ sed -i "s/prefix=.*/prefix=$new_path/g" lib/pkgconfig/* src/pkgconfig/*
 
 ## Running Forsaken
 
-The convention is to place this folder in forsaken/src/unix and run:
+The convention is to place this folder in forsaken/src/libs and run:
 
 ```shell
-./unix/make.sh && ./unix/run.sh
+./libs/make.sh && ./libs/run.sh
 ```
 
 Generally you end up writing a custom wrapper script around this.
@@ -92,7 +92,7 @@ A nice ncurses frontend to gdb that also tracks the current stack pointer throug
 * ./ubuntu64-ia32-pkgs.sh = install required packages to compile 32bit on 64bit ubuntu.
 * ./ubuntu64-ia32-make.sh = compile 32bit forsaken on 64bit ubuntu
 
-Due to a pending issue you must remove unix/lib/libSDL* and -lSDLmain from unix/lib/pkgconfig/sdl.pc.
+Due to a pending issue you must remove libs/lib/libSDL\* and -lSDLmain from libs/lib/pkgconfig/sdl.pc.
 
 Ubuntu doesn't really support building 32bit and 64bit same time since attempting to install 32bit packages will replace the 64bit packages and vice versa which really increases your cycle time.
 
@@ -117,7 +117,7 @@ Although on osx attempting to use DYLD_LIBRARY_PATH will cause the following err
 Symbol not found: __cg_png_create_info_struct
 Referenced from: /System/Library/Frameworks/ApplicationServices.framework/
 Versions/A/Frameworks/ImageIO.framework/Versions/A/ImageIO
-Expected in: $unix/lib/libpng14.14.dylib
+Expected in: $libs/lib/libpng14.14.dylib
 ```
 
 ### Relative Paths
@@ -140,7 +140,7 @@ dyldinfo -dylibs ./projectx
 
 [make.sh](https://github.com/ForsakenX/forsaken-libs/blob/master/make.sh) now does this for you by default.
 
-It will use @executable_path so to run your binaries you will need to have the unix/lib folder in the current path.
+It will use @executable_path so to run your binaries you will need to have the libs/lib folder in the current path.
 
 
 #### Static Builds

@@ -35,4 +35,4 @@ sudo ln -sf libopenal.so.1 /usr/lib/i386-linux-gnu/libopenal.so
 sudo ln -sf libSDL-1.2.so.0 /usr/lib/i386-linux-gnu/libSDL.so
 
 # sdl issue
-echo "You will need to remove unix/lib/libSDL* and -lSDLmain from sdl.pc"
+echo "You will need to remove libs/lib/libSDL* and -lSDLmain from sdl.pc"
