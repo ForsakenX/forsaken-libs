@@ -1,8 +1,6 @@
 #!/bin/bash -x
 cd "$(dirname -- "$0")"
 unix=$PWD # path to this folder
-px=$unix/.. # path to px src folder
-skel=${SKELETON:-$px/../skeleton} # path to px src folder
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$unix/lib"
 ##
 # We need this to find the libraries if not installed in /lib
@@ -15,5 +13,5 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$unix/lib"
 ##
 #export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$LD_LIBRARY_PATH"
 ## osx gdb does not support -ex
-gdb -x "$unix/gdb.script" --args \
-	"$px/projectx" "$@" -chdir "$skel"
+cd .. &&
+gdb -x "$unix/gdb.script" --args "./projectx" "$@"
