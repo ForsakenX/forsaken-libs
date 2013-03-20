@@ -42,6 +42,12 @@ It takes all the headace out of maintaing a developer setup guide.  Devs just cl
 
 # Usage
 
+The basic convention is to clone this to your [forsaken](https://github.com/ForsakenX/forsaken) source folder
+as `libs`.
+
+Then the simple next step is to run `./libs/src/build.sh` but please finish reading the sections below as you
+may desire to build using other methods.
+
 ## Multiple copies
 
 Currently the default build script will build for your native system type hence if your using 64bit os you'll be buiding 64bit binaries.
