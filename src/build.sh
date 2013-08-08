@@ -17,4 +17,8 @@ set -e # die if any of the following fail
 	./openal-soft-1.14.build
 
 } 2>&1 | tee build.log
+if [[ ${PIPESTATUS[0]} != 0 ]]; then
+	echo "Failed to build..."
+	exit 1
+fi
 echo "Done!"
