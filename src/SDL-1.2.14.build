@@ -2,17 +2,32 @@
 cd "$(dirname -- "$0")"
 v=SDL-1.2.14
 tar -xvzf $v.tar.gz
-# if mac osx then apply 1 char patch to fix up assembly issue
+# apply 1 char patch to fix up assembly issue
 # http://hg.libsdl.org/SDL/rev/32f0f603a0c8
-uname -a | grep -qi darwin && 
-	cp SDL-1.2.14.mmx.h SDL-1.2.14/src/video/mmx.h
+function fix_movq { cp SDL-1.2.14.mmx.h SDL-1.2.14/src/video/mmx.h; }
 os=$(uname -a | grep -qi darwin && echo macosx || echo linux)
-[[ $os = macosx ]] && options="--enable-video-x11=no"
-(
+if [[ $os = macosx ]]; then
+	options="--enable-video-x11=no"
+	fix_movq
+fi
+function install
+{
+	(
 	cd $v
 	./configure "$options" --prefix= &&
 	make install DESTDIR=$PWD/../.. \
 		LDFLAGS=' -L/usr/lib/i386-linux-gnu/mesa' # this is benign if not on linux
-) || exit 1
+	) || return 1
+}
+install 2>&1 | tee >(cat - >&2) | grep -q "movq"
+read install_rv _ grep_rv <<< "${PIPESTATUS[@]}"
+if [[ $install_rv != 0 ]]; then
+	if [[ $grep_rv != 0 ]]; then
+		exit 1
+	else
+		fix_movq
+		install || exit 1
+	fi
+fi
 cp pkgconfig/sdl.pc ../lib/pkgconfig/
 echo "Built: sdl"
