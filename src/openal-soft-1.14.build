@@ -2,7 +2,7 @@
 tar -xvjf openal-soft-1.14.tar.bz2
 (
 	cd openal-soft-1.14/build
-	cmake -DCMAKE_INSTALL_PREFIX= ../ || exit 1
+	cmake -DEXAMPLES=OFF -DCMAKE_INSTALL_PREFIX= ../ || exit 1
 	make install DESTDIR=$PWD/../../.. || exit 1
 	ar cru ../../../lib/libopenal.a $(find -name '*.o')
 	ranlib ../../../lib/libopenal.a
