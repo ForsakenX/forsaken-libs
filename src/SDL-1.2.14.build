@@ -32,6 +32,10 @@ if [[ $install_rv != 0 ]]; then
 	if [[ $grep_rv != 0 ]]; then
 		exit 1
 	else
+		echo "
+			The build failed and output mentioned movq!
+			Attempting to apply the movq patch and build again...
+		"
 		fix_movq
 		install || exit 1
 	fi
