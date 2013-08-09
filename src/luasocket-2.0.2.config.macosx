@@ -19,7 +19,7 @@ INSTALL_TOP_LIB=../../../lib/lua
 DEF= -DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN
 CFLAGS= $(LUAINC) -I$(COMPAT) $(DEF) -pedantic -Wall -O2 -fno-common
 LDFLAGS= -dynamiclib -install_name $@ -L../../../lib -llua
-LD=export MACOSX_DEPLOYMENT_TARGET="10.3"; gcc
+LD=export MACOSX_DEPLOYMENT_TARGET="10.3"; $(CC)
 
 #
 

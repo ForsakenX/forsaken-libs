@@ -19,7 +19,7 @@ INSTALL_TOP_LIB=../../../lib/lua
 DEF=-DLUASOCKET_DEBUG 
 CFLAGS= $(LUAINC) $(DEF) -pedantic -Wall -O2 -fpic
 LDFLAGS= -O -shared -fpic -L../../../lib -llua
-LD=gcc 
+LD=$(CC)
 
 #
 
