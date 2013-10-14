@@ -1,4 +1,5 @@
 #!/bin/bash -x
+: ${AR:=ar}
 tar -xvzf luasocket-2.0.2.tar.gz
 mv luasocket-2.0.2/config luasocket-2.0.2/config.backup
 os=$(uname -a | grep -qi darwin && echo macosx || echo linux)
@@ -10,9 +11,9 @@ mkdir ../lib/pkgconfig 2>/dev/null
 	# headers
 	cp src/luasocket.h src/mime.h ../../include
 	# static build
-	ar cru ../../lib/liblua-socket.a $(echo src/*.o | sed 's!src/mime.o!!g')
+	$AR cru ../../lib/liblua-socket.a $(echo src/*.o | sed 's!src/mime.o!!g')
 	ranlib ../../lib/liblua-socket.a
-	ar cru ../../lib/liblua-mime.a src/mime.o
+	$AR cru ../../lib/liblua-mime.a src/mime.o
 	ranlib ../../lib/liblua-mime.a
 	if [[ $os = linux ]]; then
 		cp src/mime.so.1.0.2 ../../lib/liblua-mime.so

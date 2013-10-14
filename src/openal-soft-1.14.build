@@ -1,10 +1,11 @@
 #!/bin/bash -x
+: ${AR:=ar}
 tar -xvjf openal-soft-1.14.tar.bz2
 (
 	cd openal-soft-1.14/build
 	cmake -DEXAMPLES=OFF -DCMAKE_INSTALL_PREFIX= ../ || exit 1
 	make install DESTDIR=$PWD/../../.. || exit 1
-	ar cru ../../../lib/libopenal.a $(find -name '*.o')
+	$AR cru ../../../lib/libopenal.a $(find -name '*.o')
 	ranlib ../../../lib/libopenal.a
 ) || exit 1
 mkdir -p "../lib/pkgconfig" 2>/dev/null
