@@ -33,7 +33,7 @@ Another repo similar to this has pre-compiled libraries for win32 but will soon 
 
 Hence these helper scripts give us a baseline that allows us to easily compile all required dependencies from scratch for any target system.
 
-This also makes it much easier when time comes to port to other devices such as Anrdoid, Pandora, Emscripten, PS3, Xbox, ARM, etc...
+This also makes it much easier when time comes to port to other devices such as Android, Pandora, Emscripten, PS3, Xbox, ARM, etc...
 
 
 ## Easy to get started
