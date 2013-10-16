@@ -2,6 +2,8 @@
 v=lua-5.1.4
 os=$(uname -a | grep -qi darwin && echo MACOSX || echo LINUX)
 tar -xvzf ${v}.tar.gz
+# AR should not be set to AR="ar rcu"
+sed -i -e 's/^AR=.*/AR=ar/g' -e 's/$(AR)/& rcu/g' $v/src/Makefile
 # if you want lua and luac binaries
 # you will also need: -lhistory -lncurses -lreadline
 	# ( cd ${v}; make linux install INSTALL_TOP=$PWD/../..; ) || exit 1
