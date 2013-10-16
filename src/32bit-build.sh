@@ -6,4 +6,8 @@ cd "$(dirname -- "$0")"
 # that CC= environment variable catches it
 export CC="gcc -m32" # for all ./configure builds
 export CFLAGS='-m32' LDFLAGS='-m32' # for cmake in openal
-[[ $1 ]] && "$@" || ./build.sh
+if [[ $1 ]]; then
+	"$@"
+else
+	./build.sh
+fi
