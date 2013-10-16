@@ -64,6 +64,7 @@ sed -i "s/prefix=.*/prefix=$new_path/g" lib/pkgconfig/* src/pkgconfig/*
 
 * ./src/build.sh              = build everything.
 * ./src/32bit-build.sh        = build everything with -m32.
+* ./src/em-build.sh           = build everything using emscripten.
 * ./src/SDL-2.0.build.latest  = clone latest SDL from HG repo and build.
 * ./src/clean.sh              = run `make clean` everywhere.
 * ./reset.sh                  = reset this folder back to clean state.
