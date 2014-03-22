@@ -13,7 +13,7 @@ set -e # die if any of the following fail
 
 	# these are independent
 	./enet-1.2.5.build
-	./SDL-1.2.14.build
+	./SDL-1.2.15.build
 	./openal-soft-1.14.build
 
 } 2>&1 | tee build.log
