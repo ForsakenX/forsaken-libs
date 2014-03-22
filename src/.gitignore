@@ -10,3 +10,4 @@ lua-5.1.4
 luasocket-2.0.2
 openal-soft-1.14
 zlib-1.2.5
+*.built
