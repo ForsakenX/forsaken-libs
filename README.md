@@ -1,6 +1,6 @@
 # Description
 
-Builds all required dependencies from source for compiling Forsaken (http://fly.thruhere.net).
+Builds all required dependencies from source for compiling Forsaken.
 
 
 ## Why not use system packages ?
