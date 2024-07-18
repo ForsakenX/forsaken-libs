@@ -2,8 +2,8 @@
 cd "$(dirname -- "$0")"
 
 v=SDL-1.2-latest
-[[ -d $v ]] || hg clone http://hg.libsdl.org/SDL "$v" || exit 1
-(cd "$v" && hg update SDL-1.2 && hg pull) || exit 1
+[[ -d $v ]] || git clone https://github.com/libsdl-org/SDL-1.2 "$v" || exit 1
+(cd "$v") || exit 1
 
 os=$(uname -a | grep -qi darwin && echo macosx || echo linux)
 
