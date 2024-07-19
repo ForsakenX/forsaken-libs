@@ -17,9 +17,9 @@ function run
 {
 
 	# these must generally be built in this order
-	run ./zlib-1.2.5.build
+	run ./zlib-1.2.13.build
 	run ./libpng-1.4.4.build
-	run ./lua-5.1.4.build
+	run ./lua-5.1.5.build
 	run ./luasocket-2.0.2.build
 
 	# these are independent
